@@ -1,9 +1,57 @@
 <template>
-  <h1>arlen</h1>
+  <main>
+    <div class="c t">
+      <Txt tag="h1">arlen</Txt>
+      <Txt tag="h2" flip>a place on the internet</Txt>
+    </div>
+    <div class="c b">
+      <Txt tag="h2" flip>makin' websites</Txt>
+      <Txt tag="p">hey@arlen.studio</Txt>
+    </div>
+  </main>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style></style>
+<style lang="scss">
+main {
+  background: $white;
+  color: $black;
+  min-height: 100vh;
+}
+
+.c {
+  position: absolute;
+  left: $xs;
+  right: $xs;
+  display: flex;
+  justify-content: space-between;
+  height: 10rem;
+  @include breakpoint('tablet') {
+    left: $m;
+    right: $m;
+    height: 25rem;
+  }
+}
+
+.t {
+  align-items: flex-start;
+  top: $xs;
+  @include breakpoint('tablet') {
+    top: $m;
+  }
+}
+
+.b {
+  align-items: flex-end;
+  bottom: $xs;
+  @include breakpoint('tablet') {
+    bottom: $m;
+  }
+  .f {
+    transform: rotate(180deg);
+  }
+}
+</style>

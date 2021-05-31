@@ -1,3 +1,11 @@
+// Breakpoints
+$mobile: 426px;
+$tablet: 910px;
+$breakpoints: (
+  'mobile': $mobile,
+  'tablet': $tablet
+);
+
 // Colors
 $black: #202021;
 $blue: #5dd8ff;
@@ -8,3 +16,9 @@ $purple: #baa0f2;
 $red: #f93606;
 $white: #fffcf4;
 $yellow: #ffd780;
+
+// Sizes
+$xs: 1.25rem;
+$s: 1.5rem;
+$m: 2rem;
+$l: 4rem;
