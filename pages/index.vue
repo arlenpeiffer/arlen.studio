@@ -12,7 +12,11 @@
 </template>
 
 <script>
-export default {}
+import head from '@/mixins/head'
+
+export default {
+  mixins: [head]
+}
 </script>
 
 <style lang="scss">
