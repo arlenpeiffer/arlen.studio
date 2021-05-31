@@ -1,5 +1,5 @@
 <template>
-  <div>👋</div>
+  <h1>arlen</h1>
 </template>
 
 <script>

@@ -28,9 +28,18 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     '@nuxtjs/eslint-module',
+    '@nuxtjs/google-fonts',
     '@nuxtjs/style-resources',
     // 'nuxt-vite',
   ],
+  googleFonts: {
+    families: {
+      Inter: {
+        wght: 800,
+      },
+    },
+    display: 'swap',
+  },
   styleResources: {
     scss: ['~/assets/scss/_variables.scss'],
   },

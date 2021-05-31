@@ -2,4 +2,10 @@
   <Nuxt />
 </template>
 
-<style></style>
+<style lang="scss">
+body {
+  background: $white;
+  color: $black;
+  font-family: 'Inter';
+}
+</style>
