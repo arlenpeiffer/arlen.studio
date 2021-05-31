@@ -33,17 +33,17 @@ main {
   display: flex;
   justify-content: space-between;
   height: 10rem;
-  @include breakpoint('tablet') {
+  @include breakpoint {
     left: $m;
     right: $m;
-    height: 25rem;
+    height: 20rem;
   }
 }
 
 .t {
   align-items: flex-start;
   top: $xs;
-  @include breakpoint('tablet') {
+  @include breakpoint {
     top: $m;
   }
 }
@@ -51,7 +51,7 @@ main {
 .b {
   align-items: flex-end;
   bottom: $xs;
-  @include breakpoint('tablet') {
+  @include breakpoint {
     bottom: $m;
   }
   .f {

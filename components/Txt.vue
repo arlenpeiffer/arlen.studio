@@ -50,7 +50,7 @@ export default {
   font-family: $primary-font;
   font-size: $s;
   font-weight: 800;
-  @include breakpoint('tablet') {
+  @include breakpoint {
     font-size: $l;
   }
 }

@@ -1,10 +1,6 @@
 // Breakpoints
-$mobile: 426px;
-$tablet: 910px;
-$breakpoints: (
-  'mobile': $mobile,
-  'tablet': $tablet
-);
+$breakpoint-h: 555px;
+$breakpoint-w: 910px;
 
 // Colors
 $black: #202021;
@@ -24,4 +20,4 @@ $primary-font: 'Inter', system-ui;
 $xs: 1.25rem;
 $s: 1.5rem;
 $m: 2rem;
-$l: 4rem;
+$l: 3rem;
