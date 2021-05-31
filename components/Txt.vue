@@ -47,8 +47,9 @@ export default {
 <style lang="scss">
 .txt {
   cursor: default;
-  font-family: 'Inter';
+  font-family: $primary-font;
   font-size: $s;
+  font-weight: 800;
   @include breakpoint('tablet') {
     font-size: $l;
   }
