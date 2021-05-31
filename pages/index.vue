@@ -36,7 +36,7 @@ main {
   @include breakpoint {
     left: $m;
     right: $m;
-    height: 25rem;
+    height: 20rem;
   }
 }
 
