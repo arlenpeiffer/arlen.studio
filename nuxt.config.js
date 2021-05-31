@@ -17,7 +17,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['ress/ress.css', '~/assets/scss/main.scss'],
+  css: ['ress/ress.css', '@/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -41,7 +41,7 @@ export default {
     display: 'swap'
   },
   styleResources: {
-    scss: ['~/assets/scss/_variables.scss']
+    scss: ['@/assets/scss/_variables.scss']
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
