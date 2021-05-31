@@ -20,6 +20,7 @@ main {
   background: $white;
   color: $black;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 .c {
