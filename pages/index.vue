@@ -1,12 +1,12 @@
 <template>
   <main>
     <div class="c t">
-      <h1 class="txt">arlen</h1>
-      <h2 class="txt f">a place on the internet</h2>
+      <Txt tag="h1">arlen</Txt>
+      <Txt tag="h2" flip>a place on the internet</Txt>
     </div>
     <div class="c b">
-      <h2 class="txt f">makin' websites</h2>
-      <p class="txt">hey@arlen.studio</p>
+      <Txt tag="h2" flip>makin' websites</Txt>
+      <Txt tag="p">hey@arlen.studio</Txt>
     </div>
   </main>
 </template>
@@ -53,18 +53,5 @@ main {
   .f {
     transform: rotate(180deg);
   }
-}
-
-.txt {
-  cursor: default;
-  font-family: 'Inter';
-  font-size: $s;
-  @include breakpoint('tablet') {
-    font-size: $l;
-  }
-}
-
-.f {
-  writing-mode: vertical-rl;
 }
 </style>
