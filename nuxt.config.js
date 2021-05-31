@@ -17,7 +17,7 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['ress/ress.css'],
+  css: ['ress/ress.css', '~/assets/scss/main.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -26,7 +26,14 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/eslint-module', 'nuxt-vite'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/style-resources',
+    // 'nuxt-vite',
+  ],
+  styleResources: {
+    scss: ['~/assets/scss/_variables.scss'],
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
