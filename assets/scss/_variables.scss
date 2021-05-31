@@ -1,9 +1,9 @@
 // Breakpoints
-$mobile-width: 426px;
-$tablet-width: 910px;
+$mobile: 426px;
+$tablet: 910px;
 $breakpoints: (
-  'mobile': $mobile-width,
-  'tablet': $tablet-width
+  'mobile': $mobile,
+  'tablet': $tablet
 );
 
 // Colors
