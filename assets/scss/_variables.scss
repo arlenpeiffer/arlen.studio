@@ -1,3 +1,11 @@
+// Breakpoints
+$mobile-width: 426px;
+$tablet-width: 910px;
+$breakpoints: (
+  'mobile': $mobile-width,
+  'tablet': $tablet-width
+);
+
 // Colors
 $black: #202021;
 $blue: #5dd8ff;

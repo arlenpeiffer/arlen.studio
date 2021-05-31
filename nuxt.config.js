@@ -41,7 +41,7 @@ export default {
     display: 'swap'
   },
   styleResources: {
-    scss: ['@/assets/scss/_variables.scss']
+    scss: ['@/assets/scss/_mixins.scss', '@/assets/scss/_variables.scss']
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
