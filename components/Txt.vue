@@ -2,6 +2,8 @@
   <component
     :is="tag"
     :class="classes"
+    @blur="focused = false"
+    @focus="focused = true"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
   >
@@ -25,19 +27,23 @@ export default {
   },
   data() {
     return {
+      focused: false,
       hovered: false
     }
   },
   computed: {
     classes() {
-      return ['txt', { f: this.flip }, this.hovered && this.randomColor()]
+      return ['txt', { f: this.flip }, this.highlighted && this.getHighlight()]
     },
     colors() {
       return ['blue', 'brown', 'green', 'orange', 'purple', 'red', 'yellow']
+    },
+    highlighted() {
+      return this.focused || this.hovered
     }
   },
   methods: {
-    randomColor() {
+    getHighlight() {
       return _.sample(this.colors)
     }
   }
