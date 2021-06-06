@@ -1,8 +1,10 @@
 <template>
   <component
     :is="tag"
+    ref="hey"
     :class="classes"
     @blur="focused = false"
+    @click="handleClick"
     @focus="focused = true"
     @mouseenter="hovered = true"
     @mouseleave="hovered = false"
@@ -45,6 +47,10 @@ export default {
   methods: {
     getHighlight() {
       return _.sample(this.colors)
+    },
+    handleClick() {
+      this.hovered = false
+      this.$refs.hey.blur()
     }
   }
 }
