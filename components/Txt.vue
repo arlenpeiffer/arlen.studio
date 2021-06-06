@@ -52,7 +52,7 @@ export default {
 
 <style lang="scss">
 .txt {
-  cursor: default;
+  cursor: none;
   font-family: $primary-font;
   font-size: $s;
   font-weight: 800;
