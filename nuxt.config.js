@@ -49,9 +49,7 @@ export default {
     scss: ['@/assets/scss/_mixins.scss', '@/assets/scss/_variables.scss']
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  generate: {
+    fallback: true
+  }
 }
