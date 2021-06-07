@@ -3,11 +3,11 @@
     :is="tag"
     ref="hey"
     :class="classes"
-    @blur="focused = false"
-    @click="handleClick"
-    @focus="focused = true"
-    @mouseenter="hovered = true"
-    @mouseleave="hovered = false"
+    @blur="handleBlur"
+    @click="handleMouseLeave"
+    @focus="handleFocus"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
   >
     <slot />
   </component>
@@ -48,9 +48,20 @@ export default {
     getHighlight() {
       return _.sample(this.colors)
     },
-    handleClick() {
+    handleBlur() {
+      this.focused = false
+    },
+    handleFocus() {
+      if (!this.focused && !this.hovered) {
+        this.focused = true
+      }
+    },
+    handleMouseEnter() {
+      this.hovered = true
+    },
+    handleMouseLeave() {
+      this.focused && this.$refs.hey.blur()
       this.hovered = false
-      this.$refs.hey.blur()
     }
   }
 }
