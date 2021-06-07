@@ -6,7 +6,9 @@
     </div>
     <div class="c b">
       <Txt tag="h2" flip>makin' websites</Txt>
-      <Txt tag="p">hey@arlen.studio</Txt>
+      <Txt tag="a" href="mailto:hey@arlen.studio?subject=hey!">
+        hey@arlen.studio
+      </Txt>
     </div>
   </main>
 </template>

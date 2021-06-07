@@ -1,9 +1,13 @@
 <template>
   <component
     :is="tag"
+    ref="hey"
     :class="classes"
-    @mouseenter="hovered = true"
-    @mouseleave="hovered = false"
+    @blur="handleBlur"
+    @click="handleMouseLeave"
+    @focus="handleFocus"
+    @mouseenter="handleMouseEnter"
+    @mouseleave="handleMouseLeave"
   >
     <slot />
   </component>
@@ -25,20 +29,39 @@ export default {
   },
   data() {
     return {
+      focused: false,
       hovered: false
     }
   },
   computed: {
     classes() {
-      return ['txt', { f: this.flip }, this.hovered && this.randomColor()]
+      return ['txt', { f: this.flip }, this.highlighted && this.getHighlight()]
     },
     colors() {
       return ['blue', 'brown', 'green', 'orange', 'purple', 'red', 'yellow']
+    },
+    highlighted() {
+      return this.focused || this.hovered
     }
   },
   methods: {
-    randomColor() {
+    getHighlight() {
       return _.sample(this.colors)
+    },
+    handleBlur() {
+      this.focused = false
+    },
+    handleFocus() {
+      if (!this.focused && !this.hovered) {
+        this.focused = true
+      }
+    },
+    handleMouseEnter() {
+      this.hovered = true
+    },
+    handleMouseLeave() {
+      this.$refs.hey.blur()
+      this.hovered = false
     }
   }
 }
@@ -46,7 +69,7 @@ export default {
 
 <style lang="scss">
 .txt {
-  cursor: default;
+  cursor: none;
   font-family: $primary-font;
   font-size: $s;
   font-weight: 800;
