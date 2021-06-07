@@ -60,7 +60,7 @@ export default {
       this.hovered = true
     },
     handleMouseLeave() {
-      this.focused && this.$refs.hey.blur()
+      this.$refs.hey.blur()
       this.hovered = false
     }
   }
