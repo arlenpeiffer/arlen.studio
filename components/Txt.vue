@@ -1,7 +1,7 @@
 <template>
   <component
     :is="tag"
-    ref="hey"
+    ref="txt"
     :class="classes"
     @blur="handleBlur"
     @click="handleMouseLeave"
@@ -60,7 +60,7 @@ export default {
       this.hovered = true
     },
     handleMouseLeave() {
-      this.$refs.hey.blur()
+      this.$refs.txt.blur()
       this.hovered = false
     }
   }
