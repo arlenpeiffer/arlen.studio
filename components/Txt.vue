@@ -76,6 +76,9 @@ export default {
   @include breakpoint {
     font-size: $l;
   }
+  &::selection {
+    background: transparent;
+  }
 }
 
 .f {

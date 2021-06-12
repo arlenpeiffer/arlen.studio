@@ -1,16 +1,13 @@
 <template>
-  <main>
-    <div class="c t">
-      <Txt tag="h1">arlen</Txt>
-      <Txt tag="h2" flip>a place on the internet</Txt>
-    </div>
-    <div class="c b">
-      <Txt tag="h2" flip>makin' websites</Txt>
+  <Page>
+    <template #topRight>a place on the internet</template>
+    <template #bottomLeft>makin' websites</template>
+    <template #bottomRight>
       <Txt tag="a" href="mailto:hey@arlen.studio?subject=hey!">
         hey@arlen.studio
       </Txt>
-    </div>
-  </main>
+    </template>
+  </Page>
 </template>
 
 <script>
