@@ -1,14 +1,11 @@
 <template>
-  <main>
-    <div class="c t">
-      <Txt tag="h1">arlen</Txt>
-      <Txt tag="h2" flip>whoops!</Txt>
-    </div>
-    <div class="c b">
-      <Txt tag="h2" flip>error 404: page not found</Txt>
+  <Page>
+    <template #topRight>whoops!</template>
+    <template #bottomLeft>error 404: page not found</template>
+    <template #bottomRight>
       <Txt tag="a" href="/">go home</Txt>
-    </div>
-  </main>
+    </template>
+  </Page>
 </template>
 
 <script>
