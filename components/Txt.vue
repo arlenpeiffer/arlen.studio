@@ -3,10 +3,8 @@
     :is="tag"
     ref="txt"
     :class="classes"
-    @blur="handleBlur"
-    @focus="handleFocus"
-    @mouseenter="handleMouseEnter"
-    @mouseleave="handleMouseLeave"
+    @mouseenter="toggleHighlighted"
+    @touchstart="toggleHighlighted"
   >
     <slot />
   </component>
@@ -28,8 +26,7 @@ export default {
   },
   data() {
     return {
-      focused: false,
-      hovered: false
+      highlighted: false
     }
   },
   computed: {
@@ -38,29 +35,14 @@ export default {
     },
     colors() {
       return ['blue', 'brown', 'green', 'orange', 'purple', 'red', 'yellow']
-    },
-    highlighted() {
-      return this.focused || this.hovered
     }
   },
   methods: {
     getHighlight() {
       return _.sample(this.colors)
     },
-    handleBlur() {
-      this.focused = false
-    },
-    handleFocus() {
-      if (!this.focused && !this.hovered) {
-        this.focused = true
-      }
-    },
-    handleMouseEnter() {
-      this.hovered = true
-    },
-    handleMouseLeave() {
-      this.$refs.txt.blur()
-      this.hovered = false
+    toggleHighlighted() {
+      this.highlighted = !this.highlighted
     }
   }
 }
