@@ -21,11 +21,11 @@
 main {
   background: $white;
   color: $black;
-  min-height: 100vh;
+  height: 100%;
 }
 
 .c {
-  position: absolute;
+  position: fixed;
   left: $xs;
   right: $xs;
   display: flex;

@@ -4,7 +4,6 @@
     ref="txt"
     :class="classes"
     @blur="handleBlur"
-    @click="handleMouseLeave"
     @focus="handleFocus"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
@@ -69,7 +68,6 @@ export default {
 
 <style lang="scss">
 .txt {
-  cursor: none;
   font-family: $primary-font;
   font-size: $s;
   font-weight: 800;
@@ -78,6 +76,9 @@ export default {
   }
   &::selection {
     background: transparent;
+  }
+  &:not(a) {
+    cursor: default;
   }
 }
 
