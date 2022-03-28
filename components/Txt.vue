@@ -79,26 +79,10 @@ export default {
   writing-mode: vertical-rl;
 }
 
-// 🎨
-.blue {
-  color: $blue;
-}
-.brown {
-  color: $brown;
-}
-.green {
-  color: $green;
-}
-.orange {
-  color: $orange;
-}
-.purple {
-  color: $purple;
-}
-.red {
-  color: $red;
-}
-.yellow {
-  color: $yellow;
+// highlights 🎨
+@each $key, $value in $highlights {
+  .#{$key} {
+    color: $value;
+  }
 }
 </style>

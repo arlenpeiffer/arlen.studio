@@ -13,6 +13,16 @@ $red: #f93606;
 $white: #fffcf4;
 $yellow: #ffd780;
 
+$highlights: (
+  blue: $blue,
+  brown: $brown,
+  green: $green,
+  orange: $orange,
+  purple: $purple,
+  red: $red,
+  yellow: $yellow
+);
+
 // Fonts
 $primary-font: 'Inter', system-ui;
 
@@ -21,3 +31,7 @@ $xs: 1.25rem;
 $s: 1.5rem;
 $m: 2rem;
 $l: 3rem;
+
+:export {
+  highlights: map-keys($highlights);
+}

@@ -1,3 +1,5 @@
+import { highlights } from '@/assets/js/variables'
+
 export const state = () => ({
   highlights: []
 })
@@ -15,7 +17,5 @@ export const mutations = {
 
 export const getters = {
   highlightClasses: state =>
-    ['blue', 'brown', 'green', 'orange', 'purple', 'red', 'yellow'].filter(
-      highlight => !state.highlights.includes(highlight)
-    )
+    highlights.filter(highlight => !state.highlights.includes(highlight))
 }
