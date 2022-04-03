@@ -3,3 +3,11 @@
     @content;
   }
 }
+
+@mixin highlights {
+  @each $key, $value in $highlights {
+    .#{'' + $key} {
+      color: $value;
+    }
+  }
+}

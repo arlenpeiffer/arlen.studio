@@ -3,8 +3,8 @@
     :is="tag"
     ref="txt"
     :class="classes"
-    @mouseenter="toggleHighlighted"
-    @touchstart="toggleHighlighted"
+    @mouseenter="toggleHighlight"
+    @touchstart="toggleHighlight"
   >
     <slot />
   </component>
@@ -12,6 +12,7 @@
 
 <script>
 import _ from 'lodash'
+import { mapGetters, mapMutations } from 'vuex'
 
 export default {
   props: {
@@ -26,23 +27,33 @@ export default {
   },
   data() {
     return {
-      highlighted: false
+      highlight: null
     }
   },
   computed: {
+    ...mapGetters(['availableHighlights']),
     classes() {
-      return ['txt', { f: this.flip }, this.highlighted && this.getHighlight()]
-    },
-    colors() {
-      return ['blue', 'brown', 'green', 'orange', 'purple', 'red', 'yellow']
+      return ['txt', { f: this.flip }, this.highlight]
     }
   },
   methods: {
-    getHighlight() {
-      return _.sample(this.colors)
+    ...mapMutations({
+      addHighlight: 'add',
+      removeHighlight: 'remove'
+    }),
+    getRandomHighlight() {
+      return _.sample(this.availableHighlights)
     },
-    toggleHighlighted() {
-      this.highlighted = !this.highlighted
+    handleSet() {
+      this.highlight = this.getRandomHighlight()
+      this.addHighlight(this.highlight)
+    },
+    handleUnset() {
+      this.removeHighlight(this.highlight)
+      this.highlight = null
+    },
+    toggleHighlight() {
+      this.highlight ? this.handleUnset() : this.handleSet()
     }
   }
 }
@@ -68,26 +79,5 @@ export default {
   writing-mode: vertical-rl;
 }
 
-// 🎨
-.blue {
-  color: $blue;
-}
-.brown {
-  color: $brown;
-}
-.green {
-  color: $green;
-}
-.orange {
-  color: $orange;
-}
-.purple {
-  color: $purple;
-}
-.red {
-  color: $red;
-}
-.yellow {
-  color: $yellow;
-}
+@include highlights;
 </style>
