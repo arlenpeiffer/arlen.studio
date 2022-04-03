@@ -31,7 +31,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['highlightClasses']),
+    ...mapGetters(['availableHighlights']),
     classes() {
       return ['txt', { f: this.flip }, this.highlight]
     }
@@ -42,7 +42,7 @@ export default {
       removeHighlight: 'remove'
     }),
     getRandomHighlight() {
-      return _.sample(this.highlightClasses)
+      return _.sample(this.availableHighlights)
     },
     handleSet() {
       this.highlight = this.getRandomHighlight()
@@ -79,10 +79,5 @@ export default {
   writing-mode: vertical-rl;
 }
 
-// highlights 🎨
-@each $key, $value in $highlights {
-  .#{$key} {
-    color: $value;
-  }
-}
+@include highlights;
 </style>

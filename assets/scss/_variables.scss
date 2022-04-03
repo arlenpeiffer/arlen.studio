@@ -12,15 +12,14 @@ $purple: #baa0f2;
 $red: #f93606;
 $white: #fffcf4;
 $yellow: #ffd780;
-
 $highlights: (
-  blue: $blue,
-  brown: $brown,
-  green: $green,
-  orange: $orange,
-  purple: $purple,
-  red: $red,
-  yellow: $yellow
+  'blue': $blue,
+  'brown': $brown,
+  'green': $green,
+  'orange': $orange,
+  'purple': $purple,
+  'red': $red,
+  'yellow': $yellow
 );
 
 // Fonts

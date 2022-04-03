@@ -16,6 +16,6 @@ export const mutations = {
 }
 
 export const getters = {
-  highlightClasses: state =>
+  availableHighlights: state =>
     highlights.filter(highlight => !state.highlights.includes(highlight))
 }
